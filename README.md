@@ -14,16 +14,44 @@ Queuing are the most frequently encountered problems in everyday life. For examp
 
 ![image](https://user-images.githubusercontent.com/103921593/203238265-176740b0-eae2-4772-90be-5449869ac9b0.png)
 
-
-
-
 ## Experiment:
-
+![445209476-9ba6a0ee-f24b-448a-8980-77becbe7fa26](https://github.com/user-attachments/assets/c049fe05-1777-4b22-adbb-1aad99222a4d)
+![445209682-fc4b9b31-eecc-4c40-93e0-cb36e61f9b5c](https://github.com/user-attachments/assets/ddf05a61-7d96-40ec-bb1d-6d71de2e3689)
 
 ## Program
-
+~~~
+#Developed by : Chiiradeep R
+#Register No : 212224240028
+arr_time=float(input("Enter the mean inter arrival time of objects from Feeder (in secs): "))
+ser_time=float(input("Enter the mean  inter service time of Lathe Machine (in secs) :  "))
+Robot_time=float(input("Enter the Additional time taken for the Robot (in secs) :  "))
+lam=1/arr_time
+mu=1/(ser_time+Robot_time)
+print("--------------------------------------------------------------")
+print("Single Server with Infinite Capacity - (M/M/1):(oo/FIFO)")
+print("--------------------------------------------------------------")
+print("The mean arrival rate per second : %0.2f "%lam)
+print("The mean service rate per second : %0.2f "%mu)
+if (lam <  mu):
+    Ls=lam/(mu-lam)
+    Lq=Ls-lam/mu
+    Ws=Ls/lam
+    Wq=Lq/lam
+    print("Average number of objects in the system : %0.2f "%Ls)
+    print("Average number of objects in the conveyor :  %0.2f "%Lq)
+    print("Average waiting time of an object in the system : %0.2f secs"%Ws)
+    print("Average waiting time of an object in the conveyor : %0.2f secs"%Wq)
+    print("Probability that the system is busy : %0.2f "%(lam/mu) )
+    print("Probability that the system is empty : %0.2f "%(1-lam/mu) )
+else:
+    print("Warning! Objects Over flow will happen in the conveyor")
+print("---------------------------------------------------------------")
+~~~
 
 ## Output :
+![445210168-f04efaa2-8b72-40ef-a689-1ba2d58388d5](https://github.com/user-attachments/assets/cee6111a-1d26-46ca-bb44-d89c4f3f39b4)
+
 
 ## Result : 
+The average number of material in the system and in the conveyor and waiting time are successfully found.
 
